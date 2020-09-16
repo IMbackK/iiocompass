@@ -55,6 +55,6 @@ double Magnetometer::getHeading(const Vector& magnFrame, Vector accelFrame)
 	accelFrame.y = tmp;
 	Vector projection = magnFrame-accelFrame*((magnFrame*accelFrame)/(accelFrame*accelFrame));
 	std::cout<<projection.x<<" "<<projection.y<<" "<<projection.z<<std::endl; 
-	return atan2(projection.y, projection.x);
+	return atan2(projection.y, projection.x)-M_PI;
 }
 
